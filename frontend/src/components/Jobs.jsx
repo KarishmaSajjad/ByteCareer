@@ -23,7 +23,7 @@ const Jobs = () => {
             setFilterJobs(allJobs)
         }
     }, [allJobs, searchedQuery]);
-    console.log(filterJobs,"filterJobs")
+    
     return (
         <div>
             <Navbar />
