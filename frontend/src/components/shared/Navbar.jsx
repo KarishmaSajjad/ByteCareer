@@ -28,6 +28,14 @@ const Navbar = () => {
             toast.error(error.response.data.message);
         }
     }
+    // Utility function to truncate text
+    function truncateText(text, wordLimit) {
+        if (!text) return '';
+        const words = text.split(' ');
+        return words.length > wordLimit
+            ? words.slice(0, wordLimit).join(' ') + '...'
+            : text;
+    }
     return (
         <div className='bg-white'>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
@@ -74,7 +82,11 @@ const Navbar = () => {
                                             </Avatar>
                                             <div>
                                                 <h4 className='font-medium'>{user?.fullname}</h4>
-                                                <p className='text-sm text-muted-foreground'>{user?.profile?.bio}</p>
+                                                <p className='text-sm text-muted-foreground'>
+                                                    {truncateText(user?.profile?.bio, 20)}
+                                                </p>
+
+
                                             </div>
                                         </div>
                                         <div className='flex flex-col my-2 text-gray-600'>

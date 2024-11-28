@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 
 const Jobs = () => {
   const { allJobs, searchedQuery } = useSelector((store) => store.job);
+  console.log(allJobs,"allJobs")
   const [filterJobs, setFilterJobs] = useState(allJobs);
   console.log(allJobs, "allJobs");
   useEffect(() => {
